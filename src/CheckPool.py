@@ -38,6 +38,7 @@ def check():
         status_dict1 = check_status()
         sleep(args['interval'])
         status_dict2 = check_status()
+        print(args['avg'])
         if args['avg'] is True:
             for s in dic[monitor]:
                 print('     ' + str(round((int(status_dict2[s]) - int(status_dict1[s])) / args['interval'], 2)).center(
@@ -69,7 +70,7 @@ def read_arg():
     parser.add_argument('--pass')
     parser.add_argument('--db')
     parser.add_argument('--interval', default=3, type=int)
-    parser.add_argument('--avg', default=False)
+    parser.add_argument('--avg', default=False, type=bool)
     global args
     args = vars(parser.parse_args())
 
