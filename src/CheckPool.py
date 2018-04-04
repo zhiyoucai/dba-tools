@@ -2,6 +2,7 @@ import pymysql
 from time import sleep
 import argparse
 
+
 dic = {}
 dic['qps'] = ('Com_insert', 'Com_select', 'Com_delete', 'Com_update', 'Com_replace', 'Questions', 'Queries')
 dic['lock'] = ('Table_locks_immediate', 'Table_locks_waited')
